@@ -2,16 +2,17 @@ import React, { useState, forwardRef } from 'react';
 import CloseEyeIcon from '../../assets/Icons/CloseEyeIcon';
 import OpenEyeIcon from '../../assets/Icons/OpenEyeIcon';
 import './style.css';
+import { FieldError } from 'react-hook-form';
 
 interface InputTextProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
   isPassword?: boolean;
   type?: string;
-  error?: string;
+  error?: FieldError;
 }
 
 const InputText = forwardRef<HTMLInputElement, InputTextProps>(
-  ({ label, type = 'text', isPassword, error = 'senha invalida', ...rest }, ref) => {
+  ({ label, type = 'text', isPassword, error , ...rest }, ref) => {
     const [inputType, setInputType] = useState(type);
 
     const handleChangeIcon = () => {
@@ -37,7 +38,8 @@ const InputText = forwardRef<HTMLInputElement, InputTextProps>(
           </span>
         )}
         <p>
-          {error && <>{error}</>}
+             
+          {error && <>{error.message}</>}
         </p>
       </div>
     );

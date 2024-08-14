@@ -4,7 +4,6 @@ button {
     height: 50px;
     width: 100%;
     max-width: 520px;
-    margin: 0 1rem;
     border-radius: 8px;
     background-color: var(--jungle-color);
     color: var(--primary-color);

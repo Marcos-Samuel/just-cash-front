@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
   return (
     <footer>
       <div>
-        <LogoImg color='#FFFFFF' />
+        <LogoImg colorType='secondary' />
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor corrupti ullam aspernatur est omnis officiis at, culpa impedit suscipit voluptatem?</p>
       </div>
       <div>

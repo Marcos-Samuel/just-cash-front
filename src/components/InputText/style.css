@@ -1,13 +1,12 @@
 @import '../../styles/variables.css';
 
-
 .input-container {
   position: relative;
   width: 100%;
   max-width: 520px;
   display: flex;
   flex-direction: column;
-  margin: 1rem 0; 
+  margin-bottom: 1rem; 
 }
 
 .input-container input {

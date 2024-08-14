@@ -9,11 +9,14 @@ const SignIn: React.FC = () => {
   return (
     <>
       <Header/>
-      <main >
-        <InputText type='text' name={'teste'} />
-        <Button>
-        Cadastrar
-        </Button>
+      <main className='container-signIn'>
+        <form>
+          <InputText type='text' name='Email*' />
+          <InputText type='text' name='Senha' isPassword/>
+          <Button>
+             Cadastrar
+          </Button>
+        </form>
       </main>
       <Footer/>
     </>

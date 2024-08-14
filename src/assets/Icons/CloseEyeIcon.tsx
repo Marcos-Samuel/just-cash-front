@@ -1,5 +1,5 @@
 
-const CloseEyeIcon = () => (
+const CloseEyeIcon:React.FC = () => (
   <svg
     width="24px"
     height="24px"

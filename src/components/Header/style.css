@@ -1,0 +1,15 @@
+@import '../../styles/variables.css';
+
+header {
+    background-color: var(--primary-color);
+    height: 5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.logoImg {
+    margin-left: 0.5rem;
+}

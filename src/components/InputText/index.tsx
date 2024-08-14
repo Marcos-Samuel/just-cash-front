@@ -21,7 +21,7 @@ const InputText: React.FC<InputTextProps> = ({ name, type = 'text', isPassword, 
   };
 
   return (
-    <div className='content-input'>
+    <>
       <div className='input-container'>
         <input
           type={inputType}
@@ -33,12 +33,13 @@ const InputText: React.FC<InputTextProps> = ({ name, type = 'text', isPassword, 
           <span onClick={handleChangeIcon}>
             {inputType === 'password' ? <CloseEyeIcon /> : <OpenEyeIcon />}
           </span>
-        )} 
+        )}  
+      
+        <p>
+          {error && <>{error}</>}
+        </p>
       </div>
-      <p>
-        {error && <>{error}</>}
-      </p>
-    </div>
+    </>
   );
 };
 

@@ -1,68 +1,59 @@
 @import '../../styles/variables.css';
 
-.content-input{
-    margin: 1rem;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
+
 .input-container {
-    position: relative;
-  }
-  
-  .input-container input {
-    height: 50px;
-    width: 100%;
-    max-width: 520px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid var(--boulder-color);
-    border-radius: 8px;
-    outline: none;
-    background-color: transparent;
-    color: var(--boulder-color);
-  }
-  
-  .input-container label {
-    position: absolute;
-    left: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 16px;
-    color: var(--boulder-color);
-    transition: all 0.2s ease-in-out;
-    pointer-events: none;
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0; 
+}
 
-  }
-  .input-container   input:focus {
-    outline: none; 
-    box-shadow: 0 0 5px rgba(25, 25, 26, 0.5);
-    border-color: var(--boulder-color); 
-  }
-  .input-container input:focus + label,
-  .input-container input:not(:placeholder-shown) + label {
-    top: 15%;
-    left: 5px;
-    font-size: 10px;
-    color: var(--jungle-color);
-    background: white;
-    padding: 0 5px;
-  }
-  
-  .input-container span {
-    position: absolute;
-    right: 20px;
-    bottom: 12px;
-  }
+.input-container input {
+  height: 50px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--boulder-color);
+  border-radius: 4px;
+  outline: none;
+  font-size: 16px;
+  background-color: transparent;
+  color: var(--boulder-color);
+  padding-bottom: 4px;
+}
 
-  .content-input p {
-    font-size: 12px;
-    color: var(--danger-color);
-    margin: 0;
-  }
+.input-container label {
+  position: absolute;
+  left: 10px; 
+  top: 34%; 
+  transform: translateY(-50%); 
+  font-size: 16px;
+  color: var(--boulder-color);
+  transition: all 0.2s ease-in-out; 
+  pointer-events: none;
+}
 
-  
+.input-container input:focus + label,
+.input-container input:not(:placeholder-shown) + label {
+  top: 10px; 
+  left: 4px; 
+  font-size: 10px; 
+  color: var(--jungle-color);
+  background: var(--prim);
+  padding: 0 5px;
+}
 
-  .error {
-    color: var(--danger-color);
-  }
+.input-container p {
+  display: flex;
+  width: 100%;
+  font-size: 12px;
+  color: var(--danger-color);
+  margin: 0;
+}
+
+.input-container span {
+  position: absolute;
+  right: 10px; 
+  top: 20%; 
+}

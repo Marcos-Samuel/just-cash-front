@@ -10,7 +10,7 @@ const Header: React.FC<HeaderProps> = ({ isLogout }) => {
   return (
     <header>
       <div>
-        <LogoImg color='#072854' />
+        <LogoImg colorType='secondary' />
       </div>
       {isLogout &&
       <div>

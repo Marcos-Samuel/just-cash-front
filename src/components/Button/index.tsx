@@ -1,10 +1,15 @@
+import React, { ReactNode } from 'react';
 import './style.css';
 
-const Button: React.FC = () => {
+interface ButtonProps {
+  children: ReactNode;
+}
+
+const Button: React.FC<ButtonProps> = ({ children, ...rest }) => {
   return (
-    <div>
-        Button
-    </div>
+    <button {...rest}>
+      {children}
+    </button>
   );
 };
 

@@ -8,15 +8,16 @@
 }
 .input-container {
     position: relative;
-    height: 50px;
   }
   
   .input-container input {
+    height: 50px;
     width: 100%;
+    max-width: 520px;
     padding: 10px;
     font-size: 16px;
     border: 1px solid var(--boulder-color);
-    border-radius: 4px;
+    border-radius: 8px;
     outline: none;
     background-color: transparent;
     color: var(--boulder-color);
@@ -25,8 +26,8 @@
   .input-container label {
     position: absolute;
     left: 5px;
-    top: 40%;
-    transform: translateY(-60%);
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 16px;
     color: var(--boulder-color);
     transition: all 0.2s ease-in-out;

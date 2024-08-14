@@ -7,12 +7,16 @@ import InputText from '../../components/InputText';
 import './style.css';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { IFormLogin } from '../../utils/interface';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { LoginSchema } from '../../utils/schemas/LoginSchema';
 
 const SignIn: React.FC = () => {
 
-  const { register, handleSubmit } = useForm<IFormLogin>();
+  const { register, handleSubmit, formState:{ errors } } = useForm<IFormLogin>({
+    resolver: zodResolver(LoginSchema)
+  });
   const onSubmit: SubmitHandler<IFormLogin> = (data) => {
-    
+    console.log(data);
   };
   return (
     <div className='container-signIn'>
@@ -25,11 +29,13 @@ const SignIn: React.FC = () => {
               type='text'
               label='Email*'
               {...register('email')}
+              error={errors.email}
             />
             <InputText
               type='password'
               label='Senha*'
               {...register('password')}
+              error={errors.password}
               isPassword
             />
             <Button>

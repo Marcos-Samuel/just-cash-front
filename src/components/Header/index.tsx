@@ -1,10 +1,22 @@
 import './style.css';
+import LogoutIcon from '../../assets/Icons/icone-quit';
+import LogoImg from '../../assets/logo/logoHeader';
 
-const Header: React.FC = () => {
+interface HeaderProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  isLogout?: boolean
+ }
+
+const Header: React.FC<HeaderProps> = ({ isLogout }) => {
   return (
-    <div>
-        Header
-    </div>
+    <header>
+      <div>
+        <LogoImg color='#072854' />
+      </div>
+      {isLogout &&
+      <div>
+        <LogoutIcon/>
+      </div> }
+    </header>
   );
 };
 

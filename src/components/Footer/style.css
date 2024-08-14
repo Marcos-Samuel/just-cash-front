@@ -1,0 +1,21 @@
+@import '../../styles/variables.css';
+
+footer {
+    background-color:var(--downriver-color);
+    width: 100%;
+    height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 8px;
+}
+
+footer div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 400px;
+   
+}

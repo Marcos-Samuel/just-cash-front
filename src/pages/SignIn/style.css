@@ -1,5 +1,12 @@
-main{
-  width: 100vw;
+.container-signIn {
+  width: 100;
   display: flex;
   flex-direction: column;
+}
+
+form {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

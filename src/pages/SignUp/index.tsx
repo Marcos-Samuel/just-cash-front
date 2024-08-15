@@ -2,22 +2,37 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import InputText from '../../components/InputText';
-import { IFormLogin, IFormRegister } from '../../utils/interface';
+import { IFormRegister } from '../../utils/interface';
 import './style.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import LogoImg from '../../assets/logo/logoHeader';
 import Button from '../../components/Button';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { registerSchema } from '../../utils/schemas/registerSchema';
+import { Register } from '../../services/user';
 
 const SignUp: React.FC = () => {
 
-  const { register, handleSubmit, formState: { errors } } = useForm<IFormRegister>({
+  const { register, handleSubmit, reset, setError , formState: { errors } } = useForm<IFormRegister>({
     resolver: zodResolver(registerSchema)
   });
-  const onSubmit: SubmitHandler<IFormLogin> = (data) => {
-    console.log(data);
-    
+
+  const navigate = useNavigate();
+  const onSubmit: SubmitHandler<IFormRegister> =  async (data) => {
+    try {
+      const user = await Register(data);
+      if (!user.success) {
+        setError('email', {
+          type: 'manual',
+          message: user.message
+        });
+        return;
+      }
+      reset();
+      navigate('/');
+    } catch (error) {
+      throw error;
+    }
   };
 
   return (

@@ -1,0 +1,42 @@
+@import '../../styles//variables.css';
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th {
+    border: 1px solid #ddd;
+    height: 60px;
+    padding: 8px;
+  
+
+    color: var(--boulder-color);
+    
+  }
+  td {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+    max-width: 100px;
+  }
+  th {
+    background-color: #f4f4f4;
+  }
+
+  tbody div {
+
+    background-color: var(--primary-color);
+    user-select: none;
+    padding: 16px;
+    margin: 0 0 8px 0;
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+  }
+
+  tbody tr td {
+  
+    padding: 8px; 
+    vertical-align: top; 
+  
+    min-height: 400px; 
+  }

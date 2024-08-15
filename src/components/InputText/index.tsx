@@ -38,7 +38,6 @@ const InputText = forwardRef<HTMLInputElement, InputTextProps>(
           </span>
         )}
         <p>
-             
           {error && <>{error.message}</>}
         </p>
       </div>

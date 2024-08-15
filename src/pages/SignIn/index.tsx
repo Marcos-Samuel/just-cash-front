@@ -9,9 +9,13 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { IFormLogin } from '../../utils/interface';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { LoginSchema } from '../../utils/schemas/LoginSchema';
-import { Login } from '../../services/user';
+import { loginUser } from '../../services/user';
+import { useState } from 'react';
+import SuccessMessage from '../../components/SuccessMessage';
 
 const SignIn: React.FC = () => {
+
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
   const { register, handleSubmit, setError, reset, formState:{ errors } } = useForm<IFormLogin>({
     resolver: zodResolver(LoginSchema)
@@ -21,7 +25,7 @@ const SignIn: React.FC = () => {
   
   const onSubmit: SubmitHandler<IFormLogin> = async (data) => {
     try {
-      const user = await Login(data);
+      const user = await loginUser(data);
       if (!user.success) {
         setError('password', {
           type: 'manual',
@@ -30,17 +34,22 @@ const SignIn: React.FC = () => {
         return;
       }
       reset();
-      navigate('/home');
+      setSuccessMessage('Login realizado com sucesso!'); 
+      setTimeout(() => {
+        setSuccessMessage(null); 
+        navigate('/home');
+      }, 3000);
+      
     } catch (error) {
       throw error;
     }
   };
   return (
     <div className='container-signIn'>
-      <Header/>
+      <Header variable='primary'/>
       <main className='content-main-signIn'>
         <div className='content-form'>
-          <LogoImg colorType='secondary'/>
+          <LogoImg colorType='primary'/>
           <form onSubmit={handleSubmit(onSubmit)}>
             <InputText
               type='text'
@@ -55,7 +64,7 @@ const SignIn: React.FC = () => {
               error={errors.password}
               isPassword
             />
-            <Button>
+            <Button variable='primary'>
              Cadastrar
             </Button>
           </form>
@@ -63,8 +72,14 @@ const SignIn: React.FC = () => {
            Não possui uma conta? Cadastre-se
           </Link>
         </div>
+        {successMessage && (
+          <SuccessMessage
+            message={successMessage}
+            onClose={() => setSuccessMessage(null)}
+          />
+        )}
       </main>
-      <Footer/>
+      <Footer variable='primary'/>
     </div>
   );
 };

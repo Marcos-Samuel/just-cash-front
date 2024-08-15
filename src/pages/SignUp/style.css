@@ -20,8 +20,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 .conteiner-backgroud  p , h1 {
+    max-width: 60%;
     color: var(--primary-color);
 }
 
@@ -53,3 +55,17 @@
   a:hover, a:focus {
     color: var('--jungle-color');
   }
+
+  @media (max-width: 768px) {
+ 
+    .conteiner-backgroud{
+        display: none;
+    }
+    .content-main-signup{
+        justify-content: center;
+    }
+    .divider-form{
+        width: 100%;
+        padding: 1rem;
+    }
+ }

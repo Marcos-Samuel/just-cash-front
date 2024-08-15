@@ -9,3 +9,10 @@ export interface IFormRegister{
     password: string;
     confirmPassword: string;
 }
+
+export interface IFormLead {
+    name: string;
+    email: string;
+    phone: string;
+    opportunities: string[]; 
+  }

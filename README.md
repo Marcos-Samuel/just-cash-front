@@ -21,6 +21,11 @@
 <br>
 <br>
 
+## 📝 Pages <a id="-pages"></a>
+![Cadastro](https://github.com/user-attachments/assets/b10fb7d7-a968-478d-ac8f-ad6f3f4a1c8c)
+![Login](https://github.com/user-attachments/assets/4810d814-5bb1-45d5-84da-d3f0bc26c9e5)
+![Home](https://github.com/user-attachments/assets/c4e1a0ec-3f98-4102-b4a4-de23dab4b047)
+
 ## 📝 Sobre <a id="-sobre"></a>
 
 Este projeto é uma aplicação desenvolvida com React e Vite, focada na gestão de leads. Ele utiliza um sistema de arrastar e soltar para organizar leads em diferentes categorias. O projeto também integra com o LocalStorage para persistir dados entre sessões e inclui testes para garantir a qualidade do código.

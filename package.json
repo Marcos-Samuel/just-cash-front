@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "jest"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -56,6 +57,13 @@
     "setupFilesAfterEnv": [
       "<rootDir>/setup-tests.js"
     ],
-    "verbose": true
+    "moduleNameMapper": {
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy",
+      "\\.(jpg|jpeg|png|gif|webp|svg)$": "<rootDir>/__mocks__/fileMock.js"
+    },
+    "verbose": true,
+    "transformIgnorePatterns": [
+      "/node_modules/(?!your-es6-module-to-transform|other-module-to-transform).+\\.js$"
+    ]
   }
 }

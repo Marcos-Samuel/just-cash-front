@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import './style.css'; 
+import './style.css';
 
 interface SuccessMessageProps {
-    message: string;
-    onClose: () => void;
+  message: string;
+  onClose: () => void;
 }
 
-const SuccessMessage : React.FC<SuccessMessageProps> = ({ message, onClose }) => {
+const SuccessMessage: React.FC<SuccessMessageProps> = ({ message, onClose }) => {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
@@ -18,10 +18,15 @@ const SuccessMessage : React.FC<SuccessMessageProps> = ({ message, onClose }) =>
     return () => clearTimeout(timer);
   }, [onClose]);
 
+  const handleCloseClick = () => {
+    setVisible(false);
+    onClose(); 
+  };
+
   return (
     <div className={`success-message ${visible ? 'visible' : ''}`}>
       {message}
-      <button className="close-button" onClick={() => setVisible(false)}>×</button>
+      <button className="close-button" onClick={handleCloseClick}>×</button>
     </div>
   );
 };

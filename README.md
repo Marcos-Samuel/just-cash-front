@@ -46,6 +46,8 @@ Este projeto é uma aplicação desenvolvida com React e Vite, focada na gestão
 - **React Testing Library:** Biblioteca para testes de componentes React.
 - **LocalForage:** Biblioteca para armazenamento de dados no navegador.
 - **React Beautiful DnD:** Biblioteca para implementar funcionalidades de arrastar e soltar.
+- **Zod:** Biblioteca para implementar funcionalidades de validação.
+- **React Hook Form:** Biblioteca para implementar funcionalidades de manipulação de formularios.
 
 ## Instalação 
 

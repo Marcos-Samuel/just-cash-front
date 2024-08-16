@@ -52,10 +52,12 @@
   .content-form-signup form {
     width: 100%;
   }
-  a:hover, a:focus {
-    color: var('--jungle-color');
-  }
 
+  @media (min-width: 1480px) {
+    .content-form-signup {
+        height: 80%;
+    }
+  }
   @media (max-width: 768px) {
  
     .conteiner-backgroud{
@@ -67,5 +69,9 @@
     .divider-form{
         width: 100%;
         padding: 1rem;
+    }
+
+    .content-form-signup {
+        height: 100%;
     }
  }

@@ -31,6 +31,14 @@
   gap: 0.5rem;
 }
 
+.content-buttons {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: end;
+  justify-content: end;
+}
+
 
 @media (max-width: 600px) {
  

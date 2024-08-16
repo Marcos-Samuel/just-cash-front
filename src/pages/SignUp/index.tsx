@@ -62,32 +62,32 @@ const SignUp: React.FC = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <InputText
                 type='text'
-                label='Nome Completo*'
+                label='Nome Completo'
                 {...register('name')}
                 error={errors.name}
               />
               <InputText
                 type='text'
-                label='Email*'
+                label='Email'
                 {...register('email')}
                 error={errors.email}
               />
               <InputText
                 type='password'
-                label='Senha*'
+                label='Senha'
                 {...register('password')}
                 error={errors.password}
                 isPassword
               />
               <InputText
                 type='password'
-                label='Confirme sua senha*'
+                label='Confirme sua senha'
                 {...register('confirmPassword')}
                 error={errors.confirmPassword}
                 isPassword
               />
-              <Button variable='primary'>
-                Cadastrar
+              <Button variable='primaryButton'>
+                Criar conta
               </Button>
             </form>
             <Link to='/'>

@@ -13,7 +13,6 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import SuccessMessage from '../../components/SuccessMessage';
 
-
 const Home: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedLead, setSelectedLead] = useState<IFormLead | null>(null);
@@ -79,7 +78,7 @@ const Home: React.FC = () => {
       <main>
         <div className='content-table'>
           <div className='content-button'>
-            <Button variable='primary' onClick={() => openModal('')}>
+            <Button variable='alternateButton' onClick={() => openModal('')}>
               + Novo Lead
             </Button>
           </div>
@@ -89,21 +88,21 @@ const Home: React.FC = () => {
           <form onSubmit={handleSubmit(onSubmit)}>
             <InputText
               type='text'
-              label='Nome Completo*'
+              label='Nome Completo'
               {...register('name')}
               error={errors.name}
               disabled={isFormDisabled}
             />
             <InputText
               type='text'
-              label='Email*'
+              label='Email'
               {...register('email')}
               error={errors.email}
               disabled={isFormDisabled}
             />
             <InputText
               type='text'
-              label='Telefone*'
+              label='Telefone'
               {...register('phone')}
               error={errors.phone}
               disabled={isFormDisabled}
@@ -215,8 +214,10 @@ const Home: React.FC = () => {
                   );
                 }}
               />
-              <Button variable='primary' type="submit" disabled={isFormDisabled}>Salvar</Button>
-              <Button variable='secondary' type="button" onClick={closeModal}>Cancelar</Button>
+              <div className='content-buttons'>
+                <Button variable='alternateButton' type="submit" disabled={isFormDisabled}>Salvar</Button>
+                <Button variable='secondaryButton' type="button" onClick={closeModal}>Cancelar</Button>
+              </div>
             </div>
           </form>
         </Modal>

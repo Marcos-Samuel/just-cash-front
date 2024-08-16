@@ -1,12 +1,12 @@
 import React from 'react';
 
 interface LogoImgProps extends React.SVGProps<SVGSVGElement> {
-  colorType?: 'primary' | 'secondary'; // Tornando a prop opcional
+  colorType?: 'primary' | 'secondary'; 
 }
 
 const LogoImg: React.FC<LogoImgProps> = ({ colorType = 'primary', ...props }) => {
-  const primaryColor = '#FFFFFF'; 
-  const secondaryColor = '#072854'; 
+  const primaryColor =  '#072854'; 
+  const secondaryColor = '#FFFFFF'; 
 
   const color = colorType === 'primary' ? primaryColor : secondaryColor;
    

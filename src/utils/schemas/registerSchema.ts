@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const capitalizeWords = (str: string) =>
+export const capitalizeWords = (str: string) =>
   str
     .split(' ')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
@@ -9,7 +9,7 @@ const capitalizeWords = (str: string) =>
 export const registerSchema = z.object({
   name: z.string()
     .min(3, 'Nome deve ter pelo menos 3 caracteres')
-    .regex(/^[A-Za-zÀ-ÿ]+(?:\s[A-Za-zÀ-ÿ]+)+$/, 'Nome deve conter pelo menos um nome e um sobrenome, separados por um espaço')
+    .regex(/^[A-Za-zÀ-ÿ]+(?:\s[A-Za-zÀ-ÿ]+)+$/, 'O campo nome deve conter pelo menos nome e sobrenome')
     .transform(value => capitalizeWords(value)),
   email: z.string()
     .nonempty('Email é obrigatório')

@@ -9,18 +9,22 @@ import LogoImg from '../../assets/logo/logoHeader';
 import Button from '../../components/Button';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { registerSchema } from '../../utils/schemas/registerSchema';
-import { Register } from '../../services/user';
+import { registerUser } from '../../services/user';
+import SuccessMessage from '../../components/SuccessMessage';
+import { useState } from 'react';
 
 const SignUp: React.FC = () => {
+
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
   const { register, handleSubmit, reset, setError , formState: { errors } } = useForm<IFormRegister>({
     resolver: zodResolver(registerSchema)
   });
 
   const navigate = useNavigate();
-  const onSubmit: SubmitHandler<IFormRegister> =  async (data) => {
+  const onSubmit: SubmitHandler<IFormRegister> = async (data) => {
     try {
-      const user = await Register(data);
+      const user = await registerUser(data);
       if (!user.success) {
         setError('email', {
           type: 'manual',
@@ -29,7 +33,11 @@ const SignUp: React.FC = () => {
         return;
       }
       reset();
-      navigate('/');
+      setSuccessMessage('Cadastro realizado com sucesso!'); 
+      setTimeout(() => {
+        setSuccessMessage(null); 
+        navigate('/');
+      }, 3000);
     } catch (error) {
       throw error;
     }
@@ -37,8 +45,9 @@ const SignUp: React.FC = () => {
 
   return (
     <div className='conteiner-signup' >
-      <Header />
+      <Header variable='primary' />
       <main className='content-main-signup'>
+        
         <div className='conteiner-backgroud'>
           <h1>Cadastro de Responsável pela Manutenção de Leads</h1>
           <p>
@@ -49,7 +58,7 @@ const SignUp: React.FC = () => {
         </div>
         <div className='divider-form'>
           <div className='content-form-signup'>
-            <LogoImg colorType='secondary'/>
+            <LogoImg colorType='primary'/>
             <form onSubmit={handleSubmit(onSubmit)}>
               <InputText
                 type='text'
@@ -77,7 +86,7 @@ const SignUp: React.FC = () => {
                 error={errors.confirmPassword}
                 isPassword
               />
-              <Button>
+              <Button variable='primary'>
                 Cadastrar
               </Button>
             </form>
@@ -86,8 +95,14 @@ const SignUp: React.FC = () => {
             </Link>
           </div>
         </div>
+        {successMessage && (
+          <SuccessMessage
+            message={successMessage}
+            onClose={() => setSuccessMessage(null)}
+          />
+        )}
       </main>
-      <Footer />
+      <Footer variable='primary' />
     </div>
   );
 };

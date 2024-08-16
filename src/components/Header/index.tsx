@@ -1,21 +1,34 @@
 import './style.css';
-import LogoutIcon from '../../assets/Icons/icone-quit';
+import LogoutIcon from '../../assets/Icons/IconeQuit';
 import LogoImg from '../../assets/logo/logoHeader';
+import { useNavigate } from 'react-router-dom'; 
+import { KEYS, removeItem } from '../../services/storageService';
 
 interface HeaderProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  isLogout?: boolean
- }
+  isLogout?: boolean;
+  variable: 'primary' | 'secondary';
+}
 
-const Header: React.FC<HeaderProps> = ({ isLogout }) => {
+const Header: React.FC<HeaderProps> = ({ isLogout, variable }) => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    removeItem(KEYS.TOKEN);
+    navigate('/');
+  };
+
   return (
-    <header>
+    <header className={variable}>
       <div>
-        <LogoImg colorType='secondary' />
+        <div>
+          <LogoImg colorType={variable} />
+        </div>
+        {isLogout && (
+          <div onClick={handleLogout} style={{ cursor: 'pointer' }}>
+            <LogoutIcon />
+          </div>
+        )}
       </div>
-      {isLogout &&
-      <div>
-        <LogoutIcon/>
-      </div> }
     </header>
   );
 };

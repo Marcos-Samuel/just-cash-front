@@ -80,6 +80,7 @@ a{
   text-decoration: none;
   cursor: pointer;
 }
-a:hover, a:focus {
-  color: #007bff;
+a:hover, a:focus a:active {
+  transform: scale(0.98); 
+  color:var(--downriver-color)
 }

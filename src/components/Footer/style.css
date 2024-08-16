@@ -1,22 +1,67 @@
-@import '../../styles/variables.css';
-
 footer {
-    background-color:var(--primary-color);
+    background-color: var(--primary-color);
     width: 100%;
-    height: 200px;
-
+    height: 12.5rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    border-top-left-radius: 10px;  
+    border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
-footer div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 400px;
-   
+footer strong {
+    color: var(--downriver-color);
 }
+
+footer p {
+    color: var(--boulder-color);
+}
+
+
+footer.primary {
+    background-color: var(--primary-color);
+}
+
+footer.primary strong {
+    color: var(--downriver-color);
+}
+
+footer.primary p {
+    color: var(--boulder-color);
+}
+
+footer.secondary {
+    background-color: var(--downriver-color);
+}
+
+footer.secondary strong {
+    color: var(--boulder-color);
+}
+
+footer.secondary p {
+    color: var(--primary-color);
+}
+
+.content-footer {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.primary {
+    background-color: var(--primary-color);
+}
+
+.secondary {
+    background-color: var(--downriver-color);
+}
+
+@media (max-width: 768px) {
+ 
+    .content-address , .content-over {
+        display: none;
+    }
+
+ }

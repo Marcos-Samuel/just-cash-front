@@ -1,9 +1,25 @@
+import { ReactNode } from 'react';
 import './style.css';
 
-const Modal: React.FC = () => {
+interface ModalProps extends React.InputHTMLAttributes<HTMLInputElement> { 
+  isOpen: boolean;
+  onClose: ()=> void;
+  title: string;
+  children: ReactNode;
+}
+
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
+  if (!isOpen) return null;
+
   return (
-    <div>
-        Modal
+    <div className="modal-overlay">
+      <div className="modal-content">
+        <button onClick={onClose} className="close-button">&times;</button>
+        <h2>{title}</h2>
+        <h3>Dados do Lead</h3>
+        {children}
+      </div>
+   
     </div>
   );
 };

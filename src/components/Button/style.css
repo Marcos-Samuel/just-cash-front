@@ -5,6 +5,13 @@ button {
     width: 100%;
     max-width: 520px;
     border-radius: 8px;
-    background-color: var(--jungle-color);
     color: var(--primary-color);
+}
+
+.primaryButton {
+    background-color: var(--jungle-color);
+}
+
+.secondaryButton {
+    background-color: var(--danger-color); 
 }

@@ -2,12 +2,21 @@
 
 header {
     background-color: var(--primary-color);
-    height: 5rem;
+    height: 6rem;
 
+    display: flex;
+    justify-content: center;
+
+    border-bottom-left-radius: 10px;  
+    border-bottom-right-radius: 10px;
+}
+
+header div:first-child{
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem;
+    
 }
 
 .logoImg {

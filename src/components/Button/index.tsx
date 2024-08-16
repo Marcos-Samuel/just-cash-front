@@ -1,13 +1,17 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, ButtonHTMLAttributes } from 'react';
 import './style.css';
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
+  variable: 'primary' | 'secondary';
 }
 
-const Button: React.FC<ButtonProps> = ({ children, ...rest }) => {
+const Button: React.FC<ButtonProps> = ({ children, variable, ...rest }) => {
   return (
-    <button {...rest}>
+    <button
+      className={ variable === 'primary' ? 'primaryButton' : 'secondaryButton' }
+      {...rest}
+    >
       {children}
     </button>
   );

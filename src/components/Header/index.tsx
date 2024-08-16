@@ -24,7 +24,11 @@ const Header: React.FC<HeaderProps> = ({ isLogout, variable }) => {
           <LogoImg colorType={variable} />
         </div>
         {isLogout && (
-          <div onClick={handleLogout} style={{ cursor: 'pointer' }}>
+          <div
+            onClick={handleLogout}
+            style={{ cursor: 'pointer' }}
+            role="button" 
+            aria-label="Logout">
             <LogoutIcon />
           </div>
         )}

@@ -12,6 +12,7 @@ const LogoImg: React.FC<LogoImgProps> = ({ colorType = 'primary', ...props }) =>
    
   return (
     <svg
+      data-testid="logo-img"
       width="158"
       height="24"
       viewBox="0 0 158 24"

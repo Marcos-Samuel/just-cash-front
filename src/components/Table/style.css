@@ -31,6 +31,8 @@ table {
     margin: 0 0 8px 0;
     border: 1px solid var(--primary-color);
     border-radius: 10px;
+
+    box-shadow: 0 0 5px rgba(25, 25, 26, 0.5);;
   }
 
   tbody tr td {

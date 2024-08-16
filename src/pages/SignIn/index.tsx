@@ -53,19 +53,19 @@ const SignIn: React.FC = () => {
           <form onSubmit={handleSubmit(onSubmit)}>
             <InputText
               type='text'
-              label='Email*'
+              label='Email'
               {...register('email')}
               error={errors.email}
             />
             <InputText
               type='password'
-              label='Senha*'
+              label='Senha'
               {...register('password')}
               error={errors.password}
               isPassword
             />
-            <Button variable='primary'>
-             Cadastrar
+            <Button variable='primaryButton'>
+              Entrar
             </Button>
           </form>
           <Link to='/sign-up'>

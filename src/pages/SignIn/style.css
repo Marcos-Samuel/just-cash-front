@@ -46,4 +46,8 @@
   .content-main-signIn{
     padding: 1rem;
   }
+
+  .content-form{
+    height: 80%;
+  }
  }

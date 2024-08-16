@@ -39,6 +39,7 @@ body {
   padding: 0;
   min-height: 100vh;
   line-height: 1.5;
+  font-family:'Regular', sans-serif;
 }
 
 h1, h2, h3, h4,
@@ -53,7 +54,6 @@ h3, h4 {
 
 a:not([class]) {
   text-decoration-skip-ink: auto;
-  color: currentColor;
 }
 
 img,
@@ -76,11 +76,15 @@ textarea:not([rows]) {
   scroll-margin-block: 5ex;
 }
 
-a{
+a {
   text-decoration: none;
   cursor: pointer;
+  color: var(--downriver-color);
 }
-a:hover, a:focus a:active {
-  transform: scale(0.98); 
-  color:var(--downriver-color)
+
+a:hover, 
+a:focus, 
+a:active {
+  transform: scale(0.98);
+  color: var(--hover-color); 
 }

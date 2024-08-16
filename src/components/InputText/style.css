@@ -61,3 +61,7 @@
   right: 10px; 
   top: 20%; 
 }
+
+label strong {
+  color: var(--danger-color);
+}

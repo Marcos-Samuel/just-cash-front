@@ -31,7 +31,7 @@ const InputText = forwardRef<HTMLInputElement, InputTextProps>(
           ref={ref}
           {...rest}
         />
-        <label htmlFor={label}>{label}</label>
+        <label htmlFor={label}>{label} <strong>*</strong></label>
         {isPassword && (
           <span onClick={handleChangeIcon}>
             {inputType === 'password' ? <CloseEyeIcon /> : <OpenEyeIcon />}

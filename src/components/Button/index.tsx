@@ -3,13 +3,13 @@ import './style.css';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  variable: 'primary' | 'secondary';
+  variable: 'primaryButton' | 'secondaryButton' | 'alternateButton';
 }
 
 const Button: React.FC<ButtonProps> = ({ children, variable, ...rest }) => {
   return (
     <button
-      className={ variable === 'primary' ? 'primaryButton' : 'secondaryButton' }
+      className={variable}
       {...rest}
     >
       {children}

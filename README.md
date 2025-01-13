@@ -22,8 +22,6 @@
 <br>
 <br>
 
-## 📝 Pages <a id="-pages"></a>
-
 ## 📝 Sobre <a id="-sobre"></a>
 
 Este projeto é uma aplicação desenvolvida com React e Vite, gerenciamento de uma biblioteca. O projeto também integra com o LocalStorage para persistir dados entre sessões e inclui testes para garantir a qualidade do código.
@@ -88,6 +86,7 @@ O projeto estara disponivel na rota:
 http://localhost:5173/
 
 ## 📝 DEPLOY
+[Deplay](https://contato-seguro-front-end-test-nbiz-gekev93kd.vercel.app)
 
 ## 📝 Estrutura do Projeto
 
